@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './InternshipForm.css';
+
+
 
 
 class InternshipForm extends Component {
@@ -9,17 +13,32 @@ class InternshipForm extends Component {
             tasks: [
                 {
                     id: 1, 
-                    name: 'Listening to heart beating',
+                    name: 'Modtagelse af familien',
                     status: false
                 },
                 {
                     id: 2, 
-                    name: 'Taking to future parents',
+                    name: 'Samtale om og planlægning af barselsomsorgen',
                     status: false
                 },
                 {
                     id: 3, 
-                    name: 'Checking uterus',
+                    name: 'Vejledning i personlig hygiejne',
+                    status: false
+                },
+                {
+                    id: 4, 
+                    name: 'Vejledning i personlig hygiejne',
+                    status: false
+                },
+                {
+                    id: 5, 
+                    name: 'Palpation af uterus p.p.',
+                    status: false
+                },
+                {
+                    id: 6, 
+                    name: 'Observation og vejledning omkring lokkier',
                     status: false
                 }
             ],
@@ -33,7 +52,7 @@ class InternshipForm extends Component {
         let value = event.target.checked;
         item.status = value;
 
-        // looking for id that equals 
+        // looking for id that is equal to 
         let ItemInArray = this.formData.tasks.find(itm=>itm.id===item.id);
         //
         let indexOfItem = this.formData.tasks.indexOf(ItemInArray);
@@ -49,10 +68,10 @@ class InternshipForm extends Component {
         let tasks = [];
         tasks = this.formData.tasks.map((item)=>{
             return (
-                <li>
-                    <label>{item.name}</label>
-                    <input type="checkbox" onChange={(e)=>{this.onChange(e,item)}}/>
-                </li>   
+                <tr>
+                    <td><label>{item.name}</label></td>
+                    <td><label className="control control--checkbox"><input type="checkbox" onChange={(e)=>{this.onChange(e,item)}}/><div className="control__indicator"></div></label></td>
+                </tr>
             );
         });
         return tasks; 
@@ -60,9 +79,20 @@ class InternshipForm extends Component {
     render() {
         return (
             <div>
-                <h1>Form  for internship 1</h1>
-                <ul>{this.renderTasks()}</ul>
+                <h1>Erfaringsskema for 4.semester</h1>
                 <input type="date" onChange={this.onDateChange}/>
+                <div className="container">
+                    <table className="table">
+                        <tbody>
+                        <tr>
+                        <th>Barselsomsorg generelt:</th>
+                        <th>Deltaget i (dato eller stregregnskab)</th>
+                        </tr>
+                            {this.renderTasks()}
+                        </tbody> 
+                    </table> 
+                    <button type="button" className="btn btn-success">Submit</button>
+                </div> 
             </div>
         )
     }
