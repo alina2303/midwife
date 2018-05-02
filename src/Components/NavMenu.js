@@ -41,21 +41,21 @@ class NavbarFeatures extends React.Component {
                               <NavLink to="/">Home</NavLink>
                           </NavItem>
                           <NavItem>
-                              <NavLink to="/internshipForm">Add a new form</NavLink>
-                          </NavItem>
-                          <NavItem>
-                              <NavLink to="/formTabs"> Forms</NavLink>
-                          </NavItem>
-                          <NavItem>
                               <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-                              <DropdownToggle nav caret>Dropdown</DropdownToggle>
+                              <DropdownToggle nav caret>My Internships</DropdownToggle>
                               <DropdownMenu>
-                                  <DropdownItem href="#">Action</DropdownItem>
-                                  <DropdownItem href="#">Another Action</DropdownItem>
-                                  <DropdownItem href="#">Something else here</DropdownItem>
-                                  <DropdownItem href="#">Something else here</DropdownItem>
+                                  <DropdownItem href="#">Internship 1</DropdownItem>
+                                  <DropdownItem href="#">Internship 2</DropdownItem>
+                                  <DropdownItem href="#">Internship 3</DropdownItem>
+                                  <DropdownItem href="#">Internship 4</DropdownItem>
                               </DropdownMenu>
                               </Dropdown>
+                          </NavItem>
+                          <NavItem>
+                              <NavLink to="/calendar">My Schedule</NavLink>
+                          </NavItem>
+                          <NavItem>
+                              <NavLink to="/newForm"> Add new form</NavLink>
                           </NavItem>
                         </NavbarNav>
                         <NavbarNav right>

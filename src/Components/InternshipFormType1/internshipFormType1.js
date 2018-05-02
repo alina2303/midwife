@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './InternshipForm.css';
 //import DateTimePicker from 'react-date-picker';
 
 
-
-
-class InternshipForm extends Component {
+class InternshipFormType1 extends Component {
     constructor(){
         super();
         
@@ -14,32 +11,27 @@ class InternshipForm extends Component {
             tasks: [
                 {
                     id: 1, 
-                    name: 'Modtagelse af familien',
+                    name: 'Observation og pleje af mor med sphincterruptur',
                     status: false
                 },
                 {
                     id: 2, 
-                    name: 'Samtale om og planlægning af barselsomsorgen',
+                    name: 'Højt BMI',
                     status: false
                 },
                 {
                     id: 3, 
-                    name: 'Vejledning i personlig hygiejne',
+                    name: 'Observation og pleje af mor i forbindelse med sectio',
                     status: false
                 },
                 {
                     id: 4, 
-                    name: 'Vejledning i personlig hygiejne',
+                    name: 'Administration af smertelindring, generelt og ved sectio',
                     status: false
                 },
                 {
                     id: 5, 
-                    name: 'Palpation af uterus p.p.',
-                    status: false
-                },
-                {
-                    id: 6, 
-                    name: 'Observation og vejledning omkring lokkier',
+                    name: 'Antibiotika IV',
                     status: false
                 }
             ]
@@ -82,7 +74,7 @@ class InternshipForm extends Component {
                     <table className="table">
                         <tbody>
                         <tr>
-                        <th>Barselsomsorg generelt:</th>
+                        <th>Omsorg for mor med kompliceret barsel:</th>
                         <th>Deltaget i (dato eller stregregnskab)</th>
                         </tr>
                             {this.renderTasks()}
@@ -94,4 +86,4 @@ class InternshipForm extends Component {
     }
 }
 
-export default InternshipForm;
+export default InternshipFormType1;
